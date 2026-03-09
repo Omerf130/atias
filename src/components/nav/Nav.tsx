@@ -7,7 +7,7 @@ import NavMobile from "./NavMobile/NavMobile";
 
 const navLinks = [
   { href: "/aboutCompany", label: "אודות", isDropdownExist: false },
-  { href: "/about/2", label: "דיני נזיקין", isDropdownExist: false },
+  { href: "/about/3", label: "דיני נזיקין", isDropdownExist: false },
   { href: "#damageSection", label: "מאמרים", isDropdownExist: false },
   { href: "#contact", label: "צור קשר", isDropdownExist: false },
 ];
@@ -36,12 +36,13 @@ const Nav = () => {
           >
             {label}
           </a>
-        ) : href === "/aboutCompany" ? (
+        ) : href.startsWith("/") ? (
           <a
             href={href}
             onClick={(e) => {
               e.preventDefault();
               navigate(href);
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
             {label}
