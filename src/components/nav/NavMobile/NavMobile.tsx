@@ -34,14 +34,15 @@ const NavMobile = ({ links, handleLogoClick }: NavMobileProps) => {
               {openDropdown === label ? "-" : "+"}
             </span>
           </div>
-        ) : href === "/aboutCompany" ? (
+        ) : href.startsWith("/") ? (
           <a
             href={href}
             className="mobile-link-main"
             onClick={(e) => {
-              e.preventDefault(); // לא לתת ל-reload לקרות
+              e.preventDefault();
               navigate(href);
               setIsOpen(false);
+              window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
             <span>{label}</span>
