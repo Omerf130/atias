@@ -1,0 +1,61 @@
+@use "../../../assets/styles/variables" as *;
+
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: $padding-main;
+  .about-me-title {
+    margin: 10px;
+    text-align: center;
+    direction: rtl; // ensure Hebrew is handled correctly
+  
+    .title-part {
+      display: inline-block;
+    }
+    .part-2 {
+      direction: ltr;
+    }
+  }
+  .about-me-subtitle {
+    direction: rtl;
+    width: 80%;
+    text-align: right;
+  }
+  .about-btn {
+    font-size: 20px;
+    padding: 8px 6px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    color: #000;
+    &:hover {
+      color: #fff;
+      background-color: $third-color;
+      transform: scale(1.1);
+    }
+  }
+}
+
+
+@media screen and (max-width:480px) {
+  .about-me-container {
+    .about-me-subtitle {
+      width: 100%;
+    }
+     .about-btn {
+      font-size: 14px !important; 
+    }
+  }
+} 
+
+@media screen and (max-width: 480px) {
+  .about-me-title {
+    .title-part {
+      display: block; // each part will go to its own line
+    }
+  }
+}

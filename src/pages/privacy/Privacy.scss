@@ -1,0 +1,12 @@
+.privacy-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  direction: rtl; 
+}
+
+@media screen and (max-width:500px) {
+  .privacy-container {
+    padding: 1rem;
+  }
+}

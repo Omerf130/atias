@@ -1,0 +1,8 @@
+@use "./assets/styles/variables" as *;
+
+.app {
+  background-color: white;
+  &.homepage {
+    background-color: $secondary-color;
+  }
+}

@@ -1,0 +1,113 @@
+@use "../../../assets/styles/variables" as *;
+
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap-large;
+  padding: $padding-main;
+
+  .about-me-cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $gap-medium;
+
+    .card-1,
+    .card-2 {
+      display: flex;
+      align-items: stretch; // ensure children can stretch full height
+      justify-content: center;
+      gap: $gap-medium;
+      max-width: 1200px;
+      width: 100%;
+      position: relative;
+
+      // Optional styling
+      padding: 1rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background-color: white;
+      .content-desc {
+        direction: rtl;
+        text-align: right;
+      }
+
+      img {
+        width: 50%;
+        max-width: 500px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 12px;
+      }
+
+      .content {
+        flex: 1;
+        text-align: right;
+        padding: 0 1rem;
+        height: 100%; // 🟢 Make it take 100% height of parent card
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; // optional: spread content inside
+        .content-btn {
+          align-self: flex-end;
+          background-color: #123458;
+          color: #fff;
+          padding: 10px 18px;
+          border: none;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          &:hover {
+            background-color: #0056b3;
+          }
+        }
+      }
+    }
+
+    .card-2 {
+      flex-direction: row-reverse;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .about-me-cards {
+      .card-1,
+      .card-2 {
+        flex-direction: column;
+        align-items: center;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+
+        .content {
+          padding: 1rem 0;
+          text-align: center;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .about-me-cards {
+      .card-1,
+      .card-2 {
+        .content-title {
+          font-size: 1.25rem;
+        }
+
+        .content-desc {
+          font-size: 0.95rem;
+        }
+
+        .content-btn {
+          font-size: 0.95rem;
+        }
+      }
+    }
+  }
+}

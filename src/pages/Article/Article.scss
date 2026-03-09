@@ -1,0 +1,31 @@
+.article-container {
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  line-height: 1.6;
+  direction: rtl;
+  text-align: right;
+  background-color: #fff;
+  color: #111;
+}
+
+.article-container h1,
+.article-container h2,
+.article-container h3 {
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+.article-container strong,
+.article-container b {
+  font-weight: bold;
+}
+
+.article-container p {
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .article-container {
+    padding: 1rem;
+  }
+}
